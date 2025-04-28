@@ -16,3 +16,33 @@ While `hledger` offers powerful command-line reporting capabilities and supports
 ### Why hledger-report?
 
 Perfect for users who need professional financial reports from their `hledger` data without manual formatting.
+
+## Configuration
+### Format
+
+The configuration file format is TOML.
+
+### Location
+
+The configuration file path can be provided per environment variable `HLEDGER_REPORT_CONFIG`.
+
+If the environment variable is not set, the default location `$HOME/.config/hledger-report/config.toml` is being used.
+
+The configuration file must be provided and is mandatory for correct `hledger-report` execution.
+
+### Options
+
+#### hledger
+
+The section `[hledger]` configures the interaction with the `hledger` process.
+
+| **field** | **description**                    | **default value** |
+|-----------|------------------------------------|-------------------|
+| path      | the path of the `hledger` binary   | `hledger`         |
+
+The following example demonstrates how to configure the `[hledger]` section:
+
+```toml
+[hledger]
+path = "/usr/local/bin/hledger"
+```
